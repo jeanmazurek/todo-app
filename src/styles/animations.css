@@ -1,0 +1,367 @@
+/* Animações para melhorar a experiência visual do usuário */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}
+
+/* Nova animação de pulso mais lenta */
+@keyframes pulseSlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
+
+/* Novas animações de flutuação para elementos decorativos */
+@keyframes float {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    33% {
+        transform: translateY(-10px) translateX(5px);
+    }
+
+    66% {
+        transform: translateY(-5px) translateX(-5px);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes floatSlow {
+    0% {
+        transform: translateY(0px) translateX(0px);
+    }
+
+    33% {
+        transform: translateY(-15px) translateX(10px);
+    }
+
+    66% {
+        transform: translateY(-8px) translateX(-8px);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px);
+    }
+}
+
+@keyframes floatReverse {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+
+    33% {
+        transform: translateY(10px) translateX(-5px) rotate(3deg);
+    }
+
+    66% {
+        transform: translateY(5px) translateX(5px) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+}
+
+@keyframes floatSuperSlow {
+    0% {
+        transform: translateY(0px) rotate(1deg) scale(1.05);
+    }
+
+    33% {
+        transform: translateY(-5px) rotate(2deg) scale(1.07);
+    }
+
+    66% {
+        transform: translateY(-3px) rotate(0deg) scale(1.06);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(1deg) scale(1.05);
+    }
+}
+
+@keyframes cardExpand {
+    0% {
+        transform: scale(0.98);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+    }
+
+    50% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    14% {
+        transform: scale(1.1);
+    }
+
+    28% {
+        transform: scale(1);
+    }
+
+    42% {
+        transform: scale(1.1);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shakeX {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-5px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Classes que utilizam as animações */
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slideDown {
+    animation: slideDown 0.4s ease forwards;
+}
+
+.animate-slideUp {
+    animation: slideUp 0.4s ease forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.animate-pulse-slow {
+    animation: pulseSlow 4s infinite ease-in-out;
+}
+
+/* Novas classes para efeitos de flutuação */
+.animate-float {
+    animation: float 8s infinite ease-in-out;
+}
+
+.animate-float-slow {
+    animation: floatSlow 12s infinite ease-in-out;
+}
+
+.animate-float-reverse {
+    animation: floatReverse 9s infinite ease-in-out;
+}
+
+.animate-float-super-slow {
+    animation: floatSuperSlow 20s infinite ease-in-out;
+}
+
+.animate-card-expand {
+    animation: cardExpand 0.3s ease forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 2s infinite;
+}
+
+.animate-shake-x {
+    animation: shakeX 0.8s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.animate-shake {
+    animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+/* Efeito de shimmer para carregamentos */
+.animate-shimmer {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.5) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Transições suaves para todos os elementos */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Efeitos de hover para botões e itens interativos */
+.hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Variações de animação para diferentes velocidades */
+.animate-fast {
+    animation-duration: 0.2s;
+}
+
+.animate-slow {
+    animation-duration: 0.6s;
+}
+
+/* Efeitos de foco para acessibilidade */
+.focus-ring {
+    position: relative;
+}
+
+.focus-ring:focus-visible::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-500);
+    animation: fadeIn 0.2s ease forwards;
+    pointer-events: none;
+}
+
+/* Novo padrão de grade para fundos */
+.bg-grid-white {
+    --grid-size: 40px;
+    --grid-strength: 1px;
+    --grid-color: rgba(255, 255, 255, 0.05);
+
+    background-image:
+        linear-gradient(to right, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)),
+        linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
+    background-size: var(--grid-size) var(--grid-size);
+}

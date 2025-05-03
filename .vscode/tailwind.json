@@ -1,0 +1,29 @@
+{
+    "version": 1.1,
+    "atDirectives": [
+        {
+            "name": "@tailwind",
+            "description": "Inclui os estilos base, componentes e utilitários do Tailwind CSS"
+        },
+        {
+            "name": "@apply",
+            "description": "Aplica classes de utilitário do Tailwind CSS a um seletor CSS personalizado"
+        },
+        {
+            "name": "@layer",
+            "description": "Define em qual camada do Tailwind CSS (base, components, utilities) devem ser incluídas suas regras personalizadas"
+        },
+        {
+            "name": "@variants",
+            "description": "Envolve um conjunto de regras com variantes do Tailwind como hover, focus, responsive, dark, etc."
+        },
+        {
+            "name": "@responsive",
+            "description": "Gera estilos responsivos para diferentes tamanhos de tela"
+        },
+        {
+            "name": "@screen",
+            "description": "Cria uma media query utilizando um breakpoint definido no tema do Tailwind"
+        }
+    ]
+}

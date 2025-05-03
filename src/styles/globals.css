@@ -1,0 +1,570 @@
+/* Importar animações personalizadas */
+@import './animations.css';
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis CSS personalizadas */
+:root {
+    /* Definições de fonte */
+    --font-family-sans: "Helvetica", "Helvetica Neue", Arial, sans-serif;
+    --font-family-base: var(--font-family-sans);
+
+    /* Gradientes */
+    --app-bg-gradient: linear-gradient(135deg, #f6f8fc 0%, #f0f4f8 100%);
+    --app-bg-gradient-dark: linear-gradient(135deg, #111827 0%, #0f1629 100%);
+
+    /* Sombras */
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    --card-hover-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    --card-border: 1px solid rgba(209, 213, 219, 0.3);
+    --card-border-dark: 1px solid rgba(55, 65, 81, 0.5);
+
+    /* Efeito Glass Morphism */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg-dark: rgba(17, 24, 39, 0.7);
+    --glass-blur: 10px;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+    --glass-border-dark: 1px solid rgba(75, 85, 99, 0.3);
+
+    /* Cores de destaque */
+    --primary-gradient: linear-gradient(to right, #3b82f6, #6366f1);
+    --primary-gradient-hover: linear-gradient(to right, #2563eb, #4f46e5);
+    --secondary-gradient: linear-gradient(to right, #ec4899, #8b5cf6);
+    --success-gradient: linear-gradient(to right, #10b981, #059669);
+    --danger-gradient: linear-gradient(to right, #ef4444, #dc2626);
+    --warning-gradient: linear-gradient(to right, #f59e0b, #d97706);
+
+    /* Tipografia refinada */
+    --font-tracking-tight: -0.015em;
+    --font-tracking-normal: 0em;
+    --font-tracking-wide: 0.025em;
+    --letter-spacing-tight: -0.01em;
+    --letter-spacing-normal: 0em;
+    --letter-spacing-wide: 0.02em;
+    --letter-spacing-headings: -0.02em;
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    --heading-line-height: 1.15;
+
+    /* Variáveis de Layout Responsivo */
+    --navbar-height: 60px;
+    --footer-height: 36px;
+    --container-padding-xs: 0.75rem;
+    --container-padding-sm: 1rem;
+    --container-padding-md: 1.5rem;
+    --container-padding-lg: 2rem;
+    --container-padding-xl: 3rem;
+    --calendar-cell-height-xs: 5rem;
+    --calendar-cell-height-sm: 6rem;
+    --calendar-cell-height-md: 8rem;
+    --calendar-cell-height-lg: 10rem;
+    --task-item-padding-xs: 0.5rem;
+    --task-item-padding-sm: 0.75rem;
+    --task-item-padding-md: 1rem;
+}
+
+/* Estilos globais para resolver problemas de scroll */
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background: var(--app-bg-gradient);
+    transition: background-color 0.3s ease;
+}
+
+/* Classes de utilidade para efeitos de vidro */
+.glass-panel {
+    background: var(--glass-bg);
+    /* Propriedade com prefixo primeiro */
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    /* Propriedade padrão depois */
+    backdrop-filter: blur(var(--glass-blur));
+    border: var(--glass-border);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.dark .glass-panel {
+    background: var(--glass-bg-dark);
+    border: var(--glass-border-dark);
+}
+
+.glass-panel:hover {
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* Animações personalizadas */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(99, 102, 241, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+    }
+}
+
+@keyframes modalIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Classes de animação */
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
+.animate-modal-in {
+    animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Estilos e animações para notificações */
+.toast-notification {
+    transform-origin: bottom right;
+    animation: scaleIn 0.3s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+/* Remove default focus outline for accessibility reasons - consider replacing with custom focus styles */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
+/* Estilos para formulários */
+.form-focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900;
+}
+
+/* Animação de carregamento */
+.loading-skeleton {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+/* Estilo de botão elegante */
+.btn-elegant {
+    @apply relative overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 active:scale-95;
+}
+
+.btn-elegant::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full bg-white/10 transform -translate-x-full skew-x-12 transition-transform duration-700 ease-out;
+}
+
+.btn-elegant:hover::before {
+    @apply transform translate-x-full;
+}
+
+/* Efeito hover para cards */
+.card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Melhorias para visualizações em monitores grandes */
+@media (min-width: 1536px) {
+    :root {
+        --container-padding-md: 2rem;
+        --container-padding-lg: 3rem;
+        --container-padding-xl: 4rem;
+        --calendar-cell-height-lg: 12rem;
+    }
+
+    .calendar-grid {
+        @apply gap-2;
+    }
+
+    /* Ajustes para telas ultrawide */
+    .calendar-container {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
+
+    /* Melhorar visualização de células de calendário em monitores maiores */
+    .min-h-24 {
+        min-height: var(--calendar-cell-height-md);
+    }
+}
+
+/* Melhorias para monitores ultra-grandes */
+@media (min-width: 1920px) {
+    :root {
+        --calendar-cell-height-lg: 14rem;
+    }
+
+    /* Layout de calendário mais espaçado para monitores maiores */
+    .calendar-day-cell {
+        min-height: var(--calendar-cell-height-lg);
+        padding: 1rem;
+    }
+
+    /* Permitir visualização de mais tarefas no calendário */
+    .calendar-day-cell .task-list {
+        max-height: 7rem;
+    }
+}
+
+/* Media query para dispositivos com telas menores */
+@media (max-width: 640px) {
+    :root {
+        --navbar-height: 56px;
+        --calendar-cell-height-xs: 4rem;
+    }
+
+    .mobile-compact-text {
+        @apply text-xs;
+    }
+
+    /* Ajustes para melhor visualização em dispositivos móveis */
+    .calendar-container {
+        overflow-x: auto;
+    }
+
+    /* Melhorar interação em dispositivos móveis */
+    .touch-area {
+        @apply min-h-10 min-w-10 flex items-center justify-center;
+    }
+}
+
+/* Estilos para células de calendário */
+.calendar-day-cell {
+    @apply bg-white dark:bg-zinc-800 border border-gray-200/50 dark:border-gray-700/30 rounded-lg p-2 transition-shadow hover:shadow-md;
+}
+
+.calendar-day-cell.today {
+    @apply bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800;
+}
+
+.calendar-day-cell.different-month {
+    @apply bg-gray-50/50 dark:bg-zinc-900/50 text-gray-400;
+}
+
+/* Estilos para os ícones de sincronização */
+.sync-status {
+    @apply flex items-center gap-1 text-xs;
+}
+
+.sync-status-icon {
+    @apply h-3 w-3 rounded-full;
+}
+
+.sync-status-idle {
+    @apply text-gray-400;
+}
+
+.sync-status-syncing {
+    @apply text-primary-500 animate-pulse;
+}
+
+.sync-status-synced {
+    @apply text-green-500;
+}
+
+.sync-status-error {
+    @apply text-red-500;
+}
+
+/* Efeitos de clique em dispositivos móveis */
+@media (hover: none) {
+    .active-feedback {
+        @apply transition-opacity active:opacity-70;
+    }
+}
+
+/* Personalizações para temas escuros */
+.dark .elevation-1 {
+    @apply bg-zinc-900 border-gray-800;
+}
+
+.dark .elevation-2 {
+    @apply bg-zinc-800 border-gray-700;
+}
+
+.dark .elevation-3 {
+    @apply bg-zinc-800/70 backdrop-blur border-gray-700/70;
+}
+
+/* Estilos para elementos de interface do usuário */
+.ui-card {
+    @apply bg-white dark:bg-zinc-800 rounded-xl shadow-sm border border-gray-200/50 dark:border-gray-700/30 overflow-hidden transition-all;
+    @apply hover:shadow-lg;
+}
+
+@layer base {
+    body {
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: var(--letter-spacing-tight);
+        font-weight: 300;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        letter-spacing: var(--letter-spacing-headings);
+        line-height: var(--heading-line-height);
+        font-weight: 500;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+        @apply mb-6;
+    }
+
+    h2 {
+        font-size: 1.875rem;
+        @apply mb-4;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        @apply mb-3;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        @apply mb-2;
+    }
+
+    p {
+        line-height: var(--line-height-relaxed);
+        margin-bottom: 1rem;
+        font-weight: 300;
+    }
+
+    /* Melhorar a legibilidade de blocos de texto */
+    .prose {
+        max-width: 65ch;
+        line-height: 1.75;
+    }
+
+    /* Melhorias para aplicação de textos em elmentos de UI */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Fontes diferenciadas para elementos específicos */
+    .app-tagline {
+        font-weight: 300;
+        letter-spacing: var(--letter-spacing-wide);
+    }
+
+    .minor-text {
+        font-size: 0.875rem;
+        color: theme('colors.gray.500');
+        font-weight: 400;
+    }
+
+    .badge-text {
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+}
+
+@layer components {
+
+    /* Sistema tipográfico elegante */
+    .font-serif,
+    h1,
+    h2,
+    h3,
+    .heading {
+        font-family: var(--font-serif);
+        letter-spacing: var(--letter-spacing-headings);
+        font-weight: 400;
+    }
+
+    /* Regra específica para titulos principais */
+    h1,
+    .title-xl {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    /* Estilo para subtítulos elegantes */
+    .subtitle {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 1.125rem;
+        color: theme('colors.gray.500');
+        letter-spacing: var(--letter-spacing-normal);
+        margin-top: -0.75rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Estilo para destaques */
+    .accent-text {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 300;
+    }
+
+    /* Estilo para textos de destaque nas estatísticas */
+    .stat-value {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    /* Classe para usar em elementos que devem parecer mais leves */
+    .text-light {
+        font-weight: 300;
+        letter-spacing: var(--letter-spacing-wide);
+    }
+
+    /* Classe para uso em elementos delicados */
+    .text-elegant {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        letter-spacing: 0.025em;
+    }
+
+    /* Melhorias para labels e pequenos textos */
+    .label,
+    label {
+        font-weight: 400;
+        letter-spacing: 0.01em;
+    }
+
+    /* Estilo para cabeçalhos de card */
+    .card-title {
+        font-family: var(--font-serif);
+        font-weight: 400;
+        letter-spacing: -0.01em;
+    }
+
+    /* Estilo para botões de ação principal */
+    .btn-primary {
+        letter-spacing: 0.02em;
+        font-weight: 500;
+    }
+
+    /* Melhorias para a aparência da data nos cards */
+    .date-display {
+        font-family: var(--font-serif);
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    /* Estilo para cabeçalhos de seção */
+    .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .section-header::after {
+        content: "";
+        flex-grow: 1;
+        height: 1px;
+        background: theme('colors.gray.200');
+        margin-left: 1rem;
+    }
+
+    .dark .section-header::after {
+        background: theme('colors.gray.700');
+    }
+
+    .section-header h2 {
+        font-family: var(--font-serif);
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+    }
+}
