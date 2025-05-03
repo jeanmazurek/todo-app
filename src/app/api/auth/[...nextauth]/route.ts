@@ -14,8 +14,8 @@ export const authOptions: AuthOptions = {
                 const { email, password } = credentials || {};
 
                 // Exemplo de validação simples
-                if (email === "admin@example.com" && password === "password") {
-                    return { id: "1", name: "Admin", email: "admin@example.com" };
+                if (email === "admin@todoapp.com" && password === "admin123") {
+                    return { id: "1", name: "Admin", email: "admin@todoapp.com" };
                 }
 
                 // Retorne null se as credenciais forem inválidas

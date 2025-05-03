@@ -1,53 +1,103 @@
-# Next.js & HeroUI Template
+# ToDo APP
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+Uma aplicação de gerenciamento de tarefas simples e eficaz, desenvolvida com Next.js 14 e Tailwind CSS.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+## 📋 Funcionalidades
 
-## Technologies Used
+- ✅ Criação e gerenciamento de tarefas
+- 📅 Visualização de tarefas em calendário
+- 📊 Estatísticas de produtividade
+- 🌓 Modo claro/escuro
+- 🔒 Sistema de autenticação
+- 📱 Design responsivo
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+## 🛠️ Tecnologias Utilizadas
 
-## How to Use
+- [Next.js 14](https://nextjs.org/docs/getting-started) - Framework React com renderização híbrida
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utility-first
+- [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
+- [NextAuth.js](https://next-auth.js.org/) - Autenticação para Next.js
+- [Framer Motion](https://www.framer.com/motion/) - Biblioteca de animações
+- [next-themes](https://github.com/pacocoursey/next-themes) - Suporte a temas para Next.js
 
-### Use the template with create-next-app
+## 🚀 Começando
 
-To create a new project based on this template using `create-next-app`, run the following command:
+### Pré-requisitos
 
+- Node.js 18.x ou superior
+- npm, yarn, pnpm ou bun
+
+### Instalação
+
+1. Clone o repositório
 ```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+git clone https://github.com/jeanmazurek/todo-app.git
+cd todo-app
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
+2. Instale as dependências
 ```bash
 npm install
 ```
 
-### Run the development server
+3. Configure as variáveis de ambiente
+```bash
+cp .env.example .env.local
+# Edite o arquivo .env.local com suas configurações
+```
 
+4. Inicie o servidor de desenvolvimento
 ```bash
 npm run dev
 ```
 
-### Setup pnpm (optional)
+5. Acesse [http://localhost:3000](http://localhost:3000) no seu navegador
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+### Credenciais de Acesso
 
-```bash
-public-hoist-pattern[]=*@heroui/*
+Para fazer login na aplicação, utilize as seguintes credenciais:
+
+| Usuário | Senha |
+|---------|-------|
+| admin@todoapp.com | admin123 |
+
+
+## 📚 Estrutura do Projeto
+
+```
+src/
+├── app/                  # Diretórios de rota do Next.js
+├── components/           # Componentes React reutilizáveis
+├── config/               # Configurações da aplicação
+├── hooks/                # React Hooks personalizados
+├── services/             # Serviços e APIs
+├── styles/               # Estilos globais e componentes
+├── types/                # Definições de tipos TypeScript
+└── utils/                # Funções utilitárias
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## 🧪 Testes
 
-## License
+```bash
+npm run test
+```
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+## 🛠️ Comandos Disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento
+- `npm run build` - Compila o projeto para produção
+- `npm run start` - Inicia o servidor de produção
+- `npm run lint` - Executa a verificação de linting
+- `npm run test` - Executa os testes
+
+## 📝 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 👥 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+---
+
+Desenvolvido com ❤️ por [Jean Mazurek](https://github.com/jeanmazurek)
